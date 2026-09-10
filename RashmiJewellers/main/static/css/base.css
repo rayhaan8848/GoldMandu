@@ -1,0 +1,501 @@
+:root {
+    --gold: #b8790a;
+    --gold-light: #d99a20;
+    --gold-dark: #7d4d00;
+    --cream: #f8f1e4;
+    --cream-2: #fffaf1;
+    --brown: #694006;
+    --text: #171513;
+    --muted: #70695f;
+    --border: rgba(160, 110, 35, .22);
+    --shadow: 0 12px 30px rgba(87, 52, 9, .14);
+    --radius: 20px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+    background:
+        radial-gradient(circle at 15% 20%, rgba(217, 154, 32, .07), transparent 28%),
+        linear-gradient(180deg, #fbf6eb 0%, #f7efe1 100%);
+    font-family: "Montserrat", sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.top-bar {
+    padding: 2px 0 0;
+}
+
+.top-bar-inner {
+    min-height: 48px;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(132, 86, 13, .12);
+    border-radius: 0 0 18px 18px;
+    background: rgba(255, 251, 243, .88);
+    box-shadow: 0 5px 15px rgba(88, 54, 10, .08);
+    color: #3e3426;
+}
+
+.top-date,
+.top-time {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.top-date i,
+.top-time i {
+    color: var(--brown);
+    font-size: 17px;
+}
+
+.top-time {
+    padding-left: 22px;
+    margin-left: 22px;
+    border-left: 1px solid rgba(125, 77, 0, .28);
+}
+
+.top-social {
+    margin-left: auto;
+    display: flex;
+    gap: 17px;
+}
+
+.top-social a {
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #111;
+    background: #e9b948;
+    font-size: 13px;
+    transition: .25s ease;
+}
+
+.top-social a:hover {
+    transform: translateY(-2px) scale(1.06);
+    box-shadow: 0 5px 12px rgba(128, 78, 3, .24);
+}
+
+.site-footer {
+    margin-top: 40px;
+    padding: 55px 0 25px;
+    background: #1c150d;
+    color: #f5ead6;
+}
+
+.footer-inner {
+    text-align: center;
+}
+
+.footer-logo {
+    width: 150px;
+    margin: 0 auto 18px;
+    filter: brightness(0) invert(1);
+    opacity: .9;
+}
+
+.footer-inner p {
+    color: #cfc2ae;
+    margin-bottom: 18px;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.footer-social a {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(230, 181, 85, .45);
+    border-radius: 50%;
+    color: #e7b951;
+}
+
+.footer-inner small {
+    color: #9c907e;
+}
+
+/* =========================================================
+   PREMIUM GOLD / SILVER RATE BAR
+========================================================= */
+
+.rate-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 20;
+}
+
+
+.rate-bar {
+    position: relative;
+
+    /*
+       IMPORTANT:
+       narrower than navbar
+    */
+    width: min(780px, 100%);
+
+    min-height: 38px;
+
+    margin: 0 auto;
+
+    padding: 0 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 22px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(235, 181, 60, .9);
+
+    border-radius: 12px;
+
+    color: #fff;
+
+    /*
+       Deep luxury black/gold
+    */
+    background:
+        radial-gradient(circle at 50% 0%,
+            rgba(211, 157, 43, .25),
+            transparent 55%),
+        linear-gradient(180deg,
+            #211806 0%,
+            #090703 55%,
+            #151006 100%);
+
+    /*
+       Premium depth
+    */
+    box-shadow:
+        0 10px 22px rgba(70, 42, 2, .20),
+        0 0 8px rgba(229, 172, 49, .75),
+        0 0 25px rgba(221, 164, 36, .25),
+        inset 0 1px 0 rgba(255, 223, 142, .35),
+        inset 0 -1px 0 rgba(0, 0, 0, .7);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+
+/* =========================================================
+   RATE BAR HOVER
+========================================================= */
+
+.rate-bar:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 14px 28px rgba(70, 42, 2, .25),
+        0 0 10px rgba(229, 172, 49, .9),
+        0 0 35px rgba(221, 164, 36, .35),
+        inset 0 1px 0 rgba(255, 223, 142, .4);
+}
+
+
+/* =========================================================
+   INNER GOLD BORDER
+========================================================= */
+
+.rate-bar::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 4px;
+
+    border: 1px solid rgba(234, 178, 58, .32);
+
+    border-radius: 8px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MOVING LIGHT
+========================================================= */
+
+.rate-bar::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: -100%;
+    left: -30%;
+
+    width: 25%;
+    height: 300%;
+
+    transform: rotate(25deg);
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, .28),
+            rgba(245, 193, 73, .45),
+            transparent);
+
+    filter: blur(5px);
+
+    animation:
+        rateLight 5s linear infinite;
+
+    pointer-events: none;
+}
+
+
+@keyframes rateLight {
+
+    0% {
+        left: -30%;
+    }
+
+    100% {
+        left: 130%;
+    }
+}
+
+
+/* =========================================================
+   RATE ITEM
+========================================================= */
+
+.rate-item {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    white-space: nowrap;
+
+    font-size: 13px;
+}
+
+
+.rate-item strong {
+
+    color: #e7b84f;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: .3px;
+}
+
+
+.rate-item span {
+
+    color: #f4eee2;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   GOLD ICON
+========================================================= */
+
+.rate-icon {
+
+    color: #d89d21;
+
+    font-size: 9px;
+
+    letter-spacing: -3px;
+
+    text-shadow:
+        0 0 7px rgba(224, 165, 41, .8);
+}
+
+
+.silver-icon {
+
+    color: #d8d8d8;
+
+    text-shadow:
+        0 0 7px rgba(255, 255, 255, .35);
+}
+
+
+/* =========================================================
+   CHEVRON
+========================================================= */
+
+.rate-chevron {
+
+    color: #e0a32c;
+
+    font-size: 11px;
+
+    margin-right: 3px;
+
+    text-shadow:
+        0 0 7px rgba(221, 159, 37, .8);
+}
+
+
+/* =========================================================
+   SEPARATOR
+========================================================= */
+
+.rate-separator {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: rgba(255, 255, 255, .35);
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   TAGLINE
+========================================================= */
+
+.rate-tag {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: #eee8db;
+
+    font-size: 12px;
+
+    letter-spacing: .8px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   MOBILE RATE BAR
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .rate-section {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .rate-bar {
+
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 11px 13px;
+
+        flex-wrap: wrap;
+
+        gap: 6px 12px;
+
+        border-radius: 10px;
+    }
+
+    .rate-item {
+
+        font-size: 10px;
+    }
+
+    .rate-item strong,
+    .rate-item span {
+
+        font-size: 10px;
+    }
+
+    .rate-separator {
+
+        display: none;
+    }
+
+    .rate-tag {
+
+        font-size: 9px;
+
+        letter-spacing: .5px;
+    }
+}
+
+/* =========================================================
+   PREMIUM JEWELLERY ATMOSPHERE
+========================================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    top: 120px;
+    left: 50%;
+
+    width: 900px;
+    height: 500px;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(ellipse,
+            rgba(214, 157, 38, .10),
+            transparent 65%);
+
+    filter: blur(40px);
+
+    pointer-events: none;
+
+    z-index: -1;
+}

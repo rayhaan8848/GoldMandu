@@ -1,0 +1,51 @@
+{% load static %}
+
+<header class="main-header">
+    <nav class="luxury-navbar" id="mainNavbar">
+        <div class="navbar-inner">
+
+            <!-- Logo -->
+            <a href="{% url 'home' %}" class="brand-logo">
+                <img src="{% static 'images/logo.png' %}" alt="Rashmi Jewellers Logo">
+            </a>
+
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Navigation -->
+            <div class="navbar-menu">
+                <ul class="nav-links">
+                    <li><a href="{% url 'home' %}" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#collections">Collection</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
+                <div class="nav-divider"></div>
+
+                <!-- Actions -->
+                <div class="nav-actions">
+
+                    <a href="#" class="nav-icon" aria-label="Account">
+                        <i class="fa-regular fa-user"></i>
+                    </a>
+
+                    <a href="#" class="nav-icon" aria-label="Wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </a>
+
+                    <a href="#" class="nav-icon cart-icon" aria-label="Cart">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="cart-count">2</span>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,342 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Rashmi Jewellers | Discover the Art of Luxury{% endblock %}
+
+{% block content %}
+
+<!-- =========================================================
+     HERO CAROUSEL
+========================================================= -->
+<section class="hero-section">
+    <div id="rashmiHero" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="5500">
+
+        <div class="carousel-indicators hero-indicators">
+            <button type="button" data-bs-target="#rashmiHero" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#rashmiHero" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#rashmiHero" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner">
+
+            <!-- SLIDE 1 -->
+            <div class="carousel-item active">
+                <div class="hero-slide" style="--hero-bg: url('{% static "images/bg1.png" %}');">
+                    <div class="hero-content">
+                        <span class="hero-kicker">RASHMI JEWELLERS</span>
+
+                        <h1>
+                            Discover the Art<br>
+                            of <span>Luxury</span>
+                        </h1>
+
+                        <div class="hero-ornament">
+                            <span></span><b>◆</b><span></span>
+                        </div>
+
+                        <p>
+                            Timeless designs crafted with purity,<br>
+                            passion & perfection.
+                        </p>
+
+                        <a href="#collections" class="gold-button">
+                            EXPLORE COLLECTION <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Replace with your actual product image -->
+                    <div class="hero-product">
+                        <img src="{% static 'images/c1.png' %}" alt="Rashmi Jewellers Necklace">
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="carousel-item">
+                <div class="hero-slide" style="--hero-bg: url('{% static "images/bg1.png" %}');">
+                    <div class="hero-content">
+                        <span class="hero-kicker">CRAFTED FOR ETERNITY</span>
+
+                        <h1>
+                            Elegance<br>
+                            <span>Beyond Time</span>
+                        </h1>
+
+                        <div class="hero-ornament">
+                            <span></span><b>◆</b><span></span>
+                        </div>
+
+                        <p>
+                            Fine jewellery designed to become<br>
+                            part of your most beautiful moments.
+                        </p>
+
+                        <a href="#collections" class="gold-button">
+                            VIEW COLLECTION <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="hero-product">
+                        <img src="{% static 'images/hero-product-2.png' %}" alt="Rashmi Jewellers Bangles">
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 3 -->
+            <div class="carousel-item">
+                <div class="hero-slide" style="--hero-bg: url('{% static "images/bg1.png" %}');">
+                    <div class="hero-content">
+                        <span class="hero-kicker">PURE. TRUSTED. TIMELESS.</span>
+
+                        <h1>
+                            Jewellery<br>
+                            <span>With Meaning</span>
+                        </h1>
+
+                        <div class="hero-ornament">
+                            <span></span><b>◆</b><span></span>
+                        </div>
+
+                        <p>
+                            Celebrate every milestone with<br>
+                            jewellery crafted with care.
+                        </p>
+
+                        <a href="#collections" class="gold-button">
+                            SHOP NOW <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="hero-product">
+                        <img src="{% static 'images/hero-product-3.png' %}" alt="Rashmi Jewellers Earrings">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Arrows -->
+        <button class="carousel-control-prev hero-control" type="button" data-bs-target="#rashmiHero" data-bs-slide="prev">
+            <span class="hero-arrow"><i class="fa-solid fa-chevron-left"></i></span>
+        </button>
+
+        <button class="carousel-control-next hero-control" type="button" data-bs-target="#rashmiHero" data-bs-slide="next">
+            <span class="hero-arrow"><i class="fa-solid fa-chevron-right"></i></span>
+        </button>
+    </div>
+</section>
+
+
+<!-- =========================================================
+     TRUST FEATURES
+========================================================= -->
+<section class="trust-section">
+    <div class="container-fluid px-lg-4">
+        <div class="trust-bar">
+
+            <div class="trust-item">
+                <div class="trust-icon"><i class="fa-regular fa-shield"></i></div>
+                <div>
+                    <strong>100% HALLMARK</strong>
+                    <span>Certified Pure Jewellery</span>
+                </div>
+            </div>
+
+            <div class="trust-item">
+                <div class="trust-icon"><i class="fa-regular fa-gem"></i></div>
+                <div>
+                    <strong>EXCLUSIVE DESIGNS</strong>
+                    <span>Crafted to Perfection</span>
+                </div>
+            </div>
+
+            <div class="trust-item">
+                <div class="trust-icon"><i class="fa-regular fa-award"></i></div>
+                <div>
+                    <strong>TRUST & PURITY</strong>
+                    <span>Legacy You Can Trust</span>
+                </div>
+            </div>
+
+            <div class="trust-item">
+                <div class="trust-icon"><i class="fa-solid fa-headset"></i></div>
+                <div>
+                    <strong>CUSTOMER SUPPORT</strong>
+                    <span>We're Here to Help</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================================================
+     COLLECTIONS
+========================================================= -->
+<section class="collections-section" id="collections">
+    <div class="container">
+
+        <div class="section-heading-row">
+            <div>
+                <h2>Our Collections</h2>
+                <div class="heading-ornament">
+                    <span></span><b>◆</b><span></span>
+                </div>
+            </div>
+
+            <a href="#" class="outline-button">
+                VIEW ALL <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <div class="row g-4 collection-grid">
+
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a href="#" class="collection-card">
+                    <div class="collection-image">
+                        <img src="{% static 'images/collection-necklaces.png' %}" alt="Necklaces">
+                    </div>
+                    <div class="collection-info">
+                        <h3>NECKLACES</h3>
+                        <span>View Collection <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a href="#" class="collection-card">
+                    <div class="collection-image">
+                        <img src="{% static 'images/collection-bangles.png' %}" alt="Bangles">
+                    </div>
+                    <div class="collection-info">
+                        <h3>BANGLES</h3>
+                        <span>View Collection <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a href="#" class="collection-card">
+                    <div class="collection-image">
+                        <img src="{% static 'images/collection-rings.png' %}" alt="Rings">
+                    </div>
+                    <div class="collection-info">
+                        <h3>RINGS</h3>
+                        <span>View Collection <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a href="#" class="collection-card">
+                    <div class="collection-image">
+                        <img src="{% static 'images/collection-earrings.png' %}" alt="Earrings">
+                    </div>
+                    <div class="collection-info">
+                        <h3>EARRINGS</h3>
+                        <span>View Collection <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================================================
+     ABOUT / BRAND
+========================================================= -->
+<section class="about-section" id="about">
+    <div class="container">
+        <div class="about-card">
+            <div class="about-copy">
+                <span class="section-kicker">THE RASHMI STORY</span>
+                <h2>Crafted with <span>Purity</span></h2>
+                <p>
+                    At Rashmi Jewellers, every piece is created with attention to
+                    detail, authentic materials and timeless craftsmanship.
+                    Our jewellery is designed to celebrate your story today
+                    and remain precious for generations.
+                </p>
+                <a href="#" class="gold-button">DISCOVER OUR STORY <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="about-visual">
+                <div class="about-circle"></div>
+                <img src="{% static 'images/about-jewellery.png' %}" alt="Rashmi jewellery">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================================================
+     REVIEWS
+========================================================= -->
+<section class="reviews-section" id="reviews">
+    <div class="container">
+        <div class="center-heading">
+            <span class="section-kicker">CUSTOMER LOVE</span>
+            <h2>What Our Customers Say</h2>
+            <div class="heading-ornament">
+                <span></span><b>◆</b><span></span>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-3">
+            <div class="col-md-4">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>“Beautiful craftsmanship and excellent service. The jewellery looked even better in person.”</p>
+                    <strong>— Happy Customer</strong>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>“Elegant designs, premium finishing and a wonderful shopping experience.”</p>
+                    <strong>— Happy Customer</strong>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>“The perfect place to find something special for an important occasion.”</p>
+                    <strong>— Happy Customer</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+<section class="contact-section" id="contact">
+    <div class="container">
+        <div class="contact-card">
+            <div>
+                <span class="section-kicker">VISIT RASHMI JEWELLERS</span>
+                <h2>Let's Create Something <span>Timeless</span></h2>
+                <p>Have a question about a design, custom jewellery or an order? We're here to help.</p>
+            </div>
+
+            <a href="tel:+9779800000000" class="gold-button">
+                CONTACT US <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+
+{% block extra_js %}
+<script src="{% static 'js/hero.js' %}"></script>
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}

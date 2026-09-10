@@ -1,0 +1,44 @@
+/* Optional animation file.
+   If you want these animations, add:
+   <link rel="stylesheet" href="{% static 'css/animations.css' %}">
+   after the other CSS files in base.html.
+*/
+
+@keyframes heroTextIn {
+    from {
+        opacity: 0;
+        transform: translateX(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes heroProductIn {
+    from {
+        opacity: 0;
+        transform: translateX(35px) scale(.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .65s ease, transform .65s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.luxury-navbar.scrolled {
+    box-shadow:
+        0 20px 38px rgba(76, 47, 9, .22),
+        inset 0 1px 0 rgba(255,255,255,.9);
+}
