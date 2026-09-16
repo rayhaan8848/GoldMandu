@@ -18,7 +18,10 @@
     display: flex;
     align-items: center;
     background:
-        linear-gradient(90deg, rgba(255,250,239,.97) 0%, rgba(255,250,239,.82) 43%, rgba(255,250,239,.08) 74%),
+        linear-gradient(90deg,
+            rgba(255, 250, 239, 0.45) 0%,
+            rgba(255, 250, 239, 0.25) 43%,
+            rgba(255, 250, 239, 0.05) 74%),
         var(--hero-bg) center / cover no-repeat;
 }
 
@@ -27,8 +30,8 @@
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(circle at 78% 35%, rgba(224,164,44,.13), transparent 23%),
-        linear-gradient(0deg, rgba(255,255,255,.12), transparent);
+        radial-gradient(circle at 78% 35%, rgba(224, 164, 44, .13), transparent 23%),
+        linear-gradient(0deg, rgba(255, 255, 255, .12), transparent);
     pointer-events: none;
 }
 
@@ -101,7 +104,7 @@
     background: linear-gradient(180deg, #d79518, #a76700);
     box-shadow:
         0 7px 13px rgba(124, 77, 4, .22),
-        inset 0 1px 0 rgba(255,255,255,.35);
+        inset 0 1px 0 rgba(255, 255, 255, .35);
     font-size: 13px;
     font-weight: 700;
     transition: .25s ease;
@@ -193,7 +196,7 @@
     border-radius: 9px;
     color: white;
     background:
-        radial-gradient(circle at 50% 50%, rgba(214,156,40,.22), transparent 38%),
+        radial-gradient(circle at 50% 50%, rgba(214, 156, 40, .22), transparent 38%),
         linear-gradient(180deg, #31250f, #080703);
     box-shadow:
         0 0 11px rgba(235, 175, 51, .55),

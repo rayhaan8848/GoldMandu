@@ -164,8 +164,8 @@
 .brand-logo {
     position: relative;
 
-    width: 125px;
-    flex: 0 0 125px;
+    width: 100px;
+    flex: 0 0 100px;
 
     display: flex;
     align-items: center;
