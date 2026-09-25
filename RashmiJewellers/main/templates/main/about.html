@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Link the specific CSS for this page -->
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+
+<!-- HERO SECTION -->
+<section class="hero-section" style="background-image: url('{% static 'images/about-bg.png' %}');">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 hero-content">
+                <p class="subtitle text-uppercase tracking-wide">ABOUT RASHMI JEWELLERS</p>
+                <h1 class="hero-title">More Than Jewellery,<br><span class="text-gold fst-italic">It’s a Legacy.</span></h1>
+                <p class="hero-text">
+                    At Rashmi Jewellers, we believe that jewellery is more<br>
+                    than just an accessory — it’s a symbol of love, culture<br>
+                    and timeless memories. For generations, we have been<br>
+                    crafting exquisite pieces that celebrate life’s most<br>
+                    precious moments.
+                </p>
+                <div class="separator">
+                    <span class="line"></span>
+                    <span class="diamond">♦</span>
+                    <span class="line"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OUR STORY SECTION -->
+<section class="story-section py-5">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <!-- Text Content -->
+            <div class="col-lg-6 mb-5 mb-lg-0 pe-lg-5">
+                <p class="subtitle text-uppercase tracking-wide text-gold">OUR STORY</p>
+                <h2 class="section-title mb-4">A Journey of<br>Trust, Tradition & Excellence</h2>
+                <p class="text-muted mb-4">
+                    Rashmi Jewellers was born from a simple belief — that true beauty never fades. What started as a humble dream has grown into a trusted name in fine jewellery, known for our commitment to quality, authenticity and timeless design.
+                </p>
+                <p class="text-muted mb-4">
+                    With a deep respect for tradition and a vision for the future, we continue to create jewellery that blends heritage craftsmanship with modern elegance.
+                </p>
+                <div class="separator">
+                    <span class="line"></span>
+                    <span class="diamond">♦</span>
+                    <span class="line"></span>
+                </div>
+            </div>
+            <!-- Image Content -->
+            <div class="col-lg-6 position-relative">
+                <div class="story-image-wrapper">
+                    <!-- Leaf Decoration (Top Right) -->
+                    <img src="{% static 'images/leaf.png' %}" alt="decor" class="leaf-decor top-right d-none d-md-block" onerror="this.style.display='none'">
+                    <!-- Main Image - Replace with your actual image path -->
+                    <img src="{% static 'images/RJ_logo.jpg' %}" alt="Rashmi Jewellers Story" class="img-fluid story-img">
+                    <!-- Leaf Decoration (Bottom Left) -->
+                    <img src="{% static 'images/leaf.png' %}" alt="decor" class="leaf-decor bottom-left d-none d-md-block" onerror="this.style.display='none'">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OUR VALUES SECTION -->
+<section class="values-section py-5">
+    <div class="container">
+        <div class="values-box">
+            <div class="text-center mb-5">
+                <p class="subtitle text-uppercase tracking-wide text-gold mb-2">OUR VALUES</p>
+                <h2 class="section-title">Why Choose Rashmi Jewellers?</h2>
+            </div>
+            
+            <div class="row justify-content-center text-center">
+                <!-- Value 1 -->
+                <div class="col-lg-2 col-md-4 col-sm-6 value-item mb-4 mb-lg-0">
+                    <div class="icon-circle mx-auto mb-3">
+                        <i class="bi bi-gem"></i>
+                    </div>
+                    <h5 class="value-title">100% Hallmark</h5>
+                    <p class="value-desc">Certified Pure Jewellery</p>
+                </div>
+                
+                <!-- Value 2 -->
+                <div class="col-lg-2 col-md-4 col-sm-6 value-item mb-4 mb-lg-0">
+                    <div class="icon-circle mx-auto mb-3">
+                        <i class="bi bi-gem"></i> <!-- Using gem as placeholder for exclusive design -->
+                    </div>
+                    <h5 class="value-title">Exclusive Designs</h5>
+                    <p class="value-desc">Crafted to Perfection</p>
+                </div>
+                
+                <!-- Value 3 -->
+                <div class="col-lg-2 col-md-4 col-sm-6 value-item mb-4 mb-lg-0">
+                    <div class="icon-circle mx-auto mb-3">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h5 class="value-title">Trust & Purity</h5>
+                    <p class="value-desc">Legacy You Can Trust</p>
+                </div>
+                
+                <!-- Value 4 -->
+                <div class="col-lg-2 col-md-4 col-sm-6 value-item mb-4 mb-lg-0">
+                    <div class="icon-circle mx-auto mb-3">
+                        <i class="bi bi-person"></i>
+                    </div>
+                    <h5 class="value-title">Customer Support</h5>
+                    <p class="value-desc">We're Here to Help</p>
+                </div>
+                
+                <!-- Value 5 -->
+                <div class="col-lg-2 col-md-4 col-sm-6 value-item mb-4 mb-lg-0">
+                    <div class="icon-circle mx-auto mb-3">
+                        <i class="bi bi-leaf"></i>
+                    </div>
+                    <h5 class="value-title">Ethical Sourcing</h5>
+                    <p class="value-desc">For a Brighter Tomorrow</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CRAFTSMANSHIP SECTION -->
+<section class="craftsmanship-section py-5">
+    <div class="container py-4">
+        <div class="row align-items-center">
+            <!-- Large Image -->
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <img src="{% static 'images/craft-large.jpg' %}" alt="Craftsmanship" class="img-fluid w-100 craftsmanship-img">
+            </div>
+            
+            <!-- Text & Small Images -->
+            <div class="col-lg-6 ps-lg-5 position-relative">
+                <!-- Leaf Decoration -->
+                <img src="{% static 'images/leaf-decor.png' %}" alt="decor" class="leaf-decor craft-leaf d-none d-md-block" onerror="this.style.display='none'">
+                
+                <p class="subtitle text-uppercase tracking-wide text-gold">OUR CRAFTSMANSHIP</p>
+                <h2 class="section-title mb-4">Timeless Craftsmanship,<br><span class="text-gold fst-italic">Modern Elegance</span></h2>
+                <p class="text-muted mb-4 pe-lg-5">
+                    Each piece at Rashmi Jewellers is a result of meticulous craftsmanship, skilled hands and an eye for perfection. Our artisans bring generations of expertise to life, creating jewellery that is not just beautiful, but meaningful.
+                </p>
+                
+                <a href="#" class="btn btn-outline-gold mb-5">EXPLORE OUR COLLECTION &rarr;</a>
+                
+                <!-- Small Images Stacked -->
+                <div class="d-flex flex-column gap-3 small-images-wrapper">
+                    <img src="{% static 'images/craft-small1.jpg' %}" alt="Detail 1" class="img-fluid small-craft-img">
+                    <img src="{% static 'images/craft-small2.jpg' %}" alt="Detail 2" class="img-fluid small-craft-img">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BOTTOM CTA SECTION -->
+<section class="bottom-cta" style="background-image: url('{% static 'images/about-bg.png' %}');">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <p class="subtitle text-uppercase tracking-wide">RASHMI JEWELLERS</p>
+                <h2 class="section-title text-white mb-3">Crafting Moments,<br><span class="text-gold fst-italic">For Generations</span></h2>
+                <p class="text-white mb-4">
+                    More than just jewellery, we create heirlooms<br>
+                    that tell your story — today, tomorrow and always.
+                </p>
+                <div class="separator">
+                    <span class="line" style="background-color: rgba(255,255,255,0.3);"></span>
+                    <span class="diamond text-gold">♦</span>
+                    <span class="line" style="background-color: rgba(255,255,255,0.3);"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

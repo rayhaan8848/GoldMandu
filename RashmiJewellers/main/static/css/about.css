@@ -1,0 +1,514 @@
+/* =========================================
+   IMPORT GOOGLE FONTS
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* =========================================
+   CSS VARIABLES
+========================================= */
+:root {
+    --primary-gold: #c59d5f;
+    --primary-gold-dark: #b0874d;
+    --bg-cream: #fcfbf7;
+    --bg-light-gold: #fdfaf5;
+    --text-dark: #1a1a1a;
+    --text-muted: #666666;
+    --border-color: #e5d9c5;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+/* =========================================
+   GLOBAL STYLES
+========================================= */
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background-color: var(--bg-cream);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    color: var(--text-dark);
+    margin-top: 0;
+}
+
+.text-gold {
+    color: var(--primary-gold) !important;
+}
+
+.tracking-wide {
+    letter-spacing: 2.5px;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    color: var(--text-dark);
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #000;
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* =========================================
+   SEPARATOR LINE WITH DIAMOND
+========================================= */
+.separator {
+    display: flex;
+    align-items: center;
+    width: 140px;
+    margin-top: 1.5rem;
+}
+
+.separator .line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: var(--primary-gold);
+    opacity: 0.4;
+}
+
+.separator .diamond {
+    color: var(--primary-gold);
+    font-size: 0.7rem;
+    margin: 0 12px;
+    line-height: 1;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+.hero-section {
+    position: relative;
+    padding: 120px 0;
+    background-size: cover;
+    background-position: center;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+}
+
+/* Soft left-to-right gradient overlay to ensure text readability over the background image */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(252, 251, 247, 0.95) 0%, rgba(252, 251, 247, 0.85) 45%, rgba(252, 251, 247, 0) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding-left: 15px;
+}
+
+.hero-title {
+    font-size: 3.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #111;
+    line-height: 1.15;
+}
+
+.hero-title span {
+    font-weight: 400;
+    color: var(--primary-gold);
+}
+
+.hero-text {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: #4a4a4a;
+}
+
+/* =========================================
+   OUR STORY SECTION
+========================================= */
+.story-section {
+    background-color: var(--bg-cream);
+}
+
+.story-image-wrapper {
+    position: relative;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.story-img {
+    border-radius: 8px;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: inset 0 0 0 1px rgba(197, 157, 95, 0.3);
+}
+
+/* Decorative Leaves Positioning */
+.leaf-decor {
+    position: absolute;
+    width: 60px;
+    opacity: 0.7;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.leaf-decor.top-right {
+    top: -25px;
+    right: -25px;
+}
+
+.leaf-decor.bottom-left {
+    bottom: -25px;
+    left: -25px;
+}
+
+/* =========================================
+   OUR VALUES SECTION
+========================================= */
+.values-section {
+    background-color: var(--bg-cream);
+}
+
+.values-box {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 60px 40px;
+    position: relative;
+    background-color: var(--bg-light-gold);
+}
+
+/* The delicate inner border */
+.values-box::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border: 1px solid rgba(197, 157, 95, 0.25);
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.value-item {
+    position: relative;
+    padding: 0 15px;
+}
+
+/* Vertical Dividers with Diamond details */
+.value-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background-color: var(--border-color);
+}
+
+.value-item:not(:last-child)::before {
+    content: '♦';
+    position: absolute;
+    right: -4px;
+    top: 5%;
+    color: var(--primary-gold);
+    font-size: 0.5rem;
+    opacity: 0.6;
+}
+
+/* Bottom diamond for the divider */
+.value-item:not(:last-child) .value-desc::after {
+    content: '♦';
+    position: absolute;
+    right: -4px;
+    bottom: 5%;
+    color: var(--primary-gold);
+    font-size: 0.5rem;
+    opacity: 0.6;
+}
+
+.icon-circle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 1px solid var(--primary-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    color: var(--primary-gold);
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.value-item:hover .icon-circle {
+    background-color: var(--primary-gold);
+    color: #fff;
+}
+
+.value-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: #111;
+}
+
+.value-desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+}
+
+/* =========================================
+   CRAFTSMANSHIP SECTION
+========================================= */
+.craftsmanship-section {
+    background-color: var(--bg-cream);
+}
+
+.craftsmanship-img {
+    border-radius: 10px;
+    object-fit: cover;
+    height: 100%;
+    min-height: 450px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.btn-outline-gold {
+    border: 1px solid var(--primary-gold);
+    color: var(--text-dark);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 12px 30px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    background: transparent;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-outline-gold:hover {
+    background-color: var(--primary-gold);
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Small stacked images on the right */
+.small-images-wrapper {
+    max-width: 220px;
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+}
+
+.small-craft-img {
+    border-radius: 10px;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(197, 157, 95, 0.2);
+}
+
+.craft-leaf {
+    top: -30px;
+    right: 20px;
+}
+
+/* =========================================
+   BOTTOM CTA SECTION
+========================================= */
+.bottom-cta {
+    position: relative;
+    padding: 120px 0;
+    background-size: cover;
+    background-position: bottom center;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+}
+
+/* Dark gradient overlay for white text readability */
+.bottom-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, rgba(17, 17, 17, 0.85) 0%, rgba(17, 17, 17, 0.6) 50%, rgba(17, 17, 17, 0.1) 100%);
+    z-index: 1;
+}
+
+.bottom-cta .container {
+    position: relative;
+    z-index: 2;
+}
+
+.bottom-cta .subtitle {
+    color: var(--primary-gold);
+}
+
+.bottom-cta .section-title {
+    color: #ffffff;
+}
+
+.bottom-cta p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    line-height: 1.9;
+}
+
+/* =========================================
+   RESPONSIVE ADJUSTMENTS
+========================================= */
+
+/* Tablet & Smaller Laptops */
+@media (max-width: 1199.5px) {
+    .hero-title {
+        font-size: 3.2rem;
+    }
+
+    .section-title {
+        font-size: 2.4rem;
+    }
+
+    /* Hide delicate dividers on values to prevent cramped layout */
+    .value-item:not(:last-child)::after,
+    .value-item:not(:last-child)::before,
+    .value-item:not(:last-child) .value-desc::after {
+        display: none;
+    }
+
+    .value-item {
+        margin-bottom: 30px;
+    }
+}
+
+/* Tablets (Portrait) */
+@media (max-width: 991.5px) {
+    .hero-section {
+        padding: 80px 0;
+        min-height: auto;
+    }
+
+    .hero-section::before {
+        background: rgba(252, 251, 247, 0.9);
+        /* Solid overlay on mobile for readability */
+    }
+
+    .hero-title {
+        font-size: 2.6rem;
+    }
+
+    .story-image-wrapper {
+        margin-top: 40px;
+    }
+
+    .values-box {
+        padding: 40px 20px;
+    }
+
+    .craftsmanship-img {
+        min-height: 350px;
+        margin-bottom: 30px;
+    }
+
+    /* Stack small images next to each other on tablet */
+    .small-images-wrapper {
+        position: relative;
+        max-width: 100%;
+        flex-direction: row !important;
+        margin-top: 30px;
+        right: auto;
+        bottom: auto;
+        gap: 15px !important;
+    }
+
+    .small-craft-img {
+        width: 48%;
+    }
+
+    .bottom-cta {
+        padding: 80px 0;
+        min-height: auto;
+    }
+
+    .bottom-cta::before {
+        background: rgba(17, 17, 17, 0.8);
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 767.5px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .section-title {
+        font-size: 1.9rem;
+    }
+
+    .subtitle {
+        font-size: 0.75rem;
+    }
+
+    .separator {
+        width: 100px;
+    }
+
+    .values-box::after {
+        display: none;
+    }
+
+    /* Remove inner border on very small screens */
+}
+
+/* Small Mobile Devices */
+@media (max-width: 575.5px) {
+    .hero-title {
+        font-size: 1.9rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .btn-outline-gold {
+        width: 100%;
+        text-align: center;
+    }
+
+    .story-image-wrapper::before,
+    .story-image-wrapper::after {
+        display: none;
+        /* Hide corner accents if screen is too small */
+    }
+
+    .leaf-decor {
+        display: none !important;
+    }
+
+    /* Hide decorative leaves on small screens to avoid overlap */
+}
