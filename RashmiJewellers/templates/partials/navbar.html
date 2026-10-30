@@ -19,11 +19,19 @@
             <!-- Navigation -->
             <div class="navbar-menu">
                 <ul class="nav-links">
-                    <li><a href="{% url 'home' %}" class="active">Home</a></li>
-                    <li><a href=" {% url "about" %} ">About</a></li>
-                    <li><a href="#collections">Collection</a></li>
-                    <li><a href="#reviews">Reviews</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li>
+                        <a href="{% url 'home' %}"{% if request.resolver_match.url_name == 'home' %} class="active" aria-current="page"{% endif %}>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'about' %}"{% if request.resolver_match.url_name == 'about' %} class="active" aria-current="page"{% endif %}>
+                            About
+                        </a>
+                    </li>
+                    <li><a href="{% url 'home' %}#collections">Collection</a></li>
+                    <li><a href="{% url 'home' %}#reviews">Reviews</a></li>
+                    <li><a href="{% url 'home' %}#contact">Contact</a></li>
                 </ul>
 
                 <div class="nav-divider"></div>
