@@ -1,0 +1,432 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Collection | Rashmi Jewellers{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/collection.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+{% endblock %}
+
+{% block content %}
+
+<main class="rj-collection-page">
+
+    <!-- Collection Hero Banner -->
+    <section class="rj-collection-hero">
+        <div class="rj-collection-hero__content">
+            <p class="rj-eyebrow">
+                OUR COLLECTION <span></span>
+            </p>
+
+            <h1>Timeless Elegance</h1>
+
+            <p class="rj-hero-subtitle">
+                Crafted to shine, forever yours.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- Main Shop Layout -->
+    <section class="rj-shop-layout">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="rj-filter-sidebar">
+
+            <!-- Category Filter -->
+            <div class="rj-filter-section">
+
+                <h2 class="rj-filter-heading">
+                    <i class="bi bi-sliders2"></i>
+                    Filter by Category
+                </h2>
+
+                <div class="rj-category-list" id="categoryFilters">
+
+                    <button class="rj-category-option is-active"
+                            type="button"
+                            data-category="all">
+
+                        <span class="rj-category-icon">
+                            <i class="bi bi-grid"></i>
+                        </span>
+
+                        <span>All Products</span>
+
+                        <span class="rj-category-count">
+                            {{ products|length }}
+                        </span>
+                    </button>
+
+                    {% for category in categories %}
+
+                    <button class="rj-category-option"
+                            type="button"
+                            data-category="{{ category.slug|default:category.name|slugify }}">
+
+                        <span class="rj-category-icon">
+                            {% if category.icon_class %}
+                                <i class="{{ category.icon_class }}"></i>
+                            {% else %}
+                                <i class="bi bi-gem"></i>
+                            {% endif %}
+                        </span>
+
+                        <span>{{ category.name }}</span>
+
+                        <span class="rj-category-count">
+                            {{ category.product_count|default:"" }}
+                        </span>
+
+                    </button>
+
+                    {% empty %}
+
+                    <button class="rj-category-option" type="button" data-category="necklace">
+                        <span class="rj-category-icon"><i class="bi bi-gem"></i></span>
+                        <span>Necklace</span>
+                    </button>
+
+                    <button class="rj-category-option" type="button" data-category="earrings">
+                        <span class="rj-category-icon"><i class="bi bi-stars"></i></span>
+                        <span>Earrings</span>
+                    </button>
+
+                    <button class="rj-category-option" type="button" data-category="rings">
+                        <span class="rj-category-icon"><i class="bi bi-circle"></i></span>
+                        <span>Rings</span>
+                    </button>
+
+                    <button class="rj-category-option" type="button" data-category="bracelet">
+                        <span class="rj-category-icon"><i class="bi bi-circle-square"></i></span>
+                        <span>Bracelet</span>
+                    </button>
+
+                    <button class="rj-category-option" type="button" data-category="bangles">
+                        <span class="rj-category-icon"><i class="bi bi-record-circle"></i></span>
+                        <span>Bangles</span>
+                    </button>
+
+                    <button class="rj-category-option" type="button" data-category="accessories">
+                        <span class="rj-category-icon"><i class="bi bi-gem"></i></span>
+                        <span>Accessories</span>
+                    </button>
+
+                    {% endfor %}
+
+                </div>
+            </div>
+
+
+            <div class="rj-filter-divider"></div>
+
+
+            <!-- Price Filter -->
+            <div class="rj-filter-section rj-price-filter">
+
+                <h2 class="rj-filter-heading">
+                    <i class="bi bi-currency-rupee"></i>
+                    Filter by Price
+                </h2>
+
+                <div class="rj-price-range">
+
+                    <div class="rj-range-track">
+
+                        <input
+                            id="minPriceRange"
+                            type="range"
+                            min="0"
+                            max="1000000"
+                            step="500"
+                            value="5000">
+
+                        <input
+                            id="maxPriceRange"
+                            type="range"
+                            min="0"
+                            max="1000000"
+                            step="500"
+                            value="1000000">
+
+                    </div>
+
+                    <div class="rj-price-values">
+
+                        <label>
+                            Rs.
+                            <input
+                                id="minPriceNumber"
+                                type="number"
+                                min="0"
+                                max="1000000"
+                                value="5000">
+                        </label>
+
+                        <label>
+                            Rs.
+                            <input
+                                id="maxPriceNumber"
+                                type="number"
+                                min="0"
+                                max="1000000"
+                                value="1000000">
+                        </label>
+
+                    </div>
+                </div>
+
+
+                <button class="rj-apply-filter" id="applyPriceFilter">
+                    Apply Filter
+                    <i class="bi bi-arrow-right"></i>
+                </button>
+
+                <button class="rj-clear-filter" id="clearFilters">
+                    Clear all filters
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- RIGHT PRODUCTS SECTION -->
+        <div class="rj-products-area">
+
+            <!-- Toolbar -->
+            <div class="rj-products-toolbar">
+
+                <p class="rj-results-count" id="resultsCount">
+                    Showing <strong>{{ products|length }}</strong> products
+                </p>
+
+                <div class="rj-toolbar-actions">
+
+                    <label class="visually-hidden" for="sortProducts">
+                        Sort products
+                    </label>
+
+                    <select id="sortProducts" class="rj-sort-select">
+
+                        <option value="popular">Sort by: Popularity</option>
+                        <option value="newest">Sort by: Newest</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name">Name: A to Z</option>
+
+                    </select>
+
+
+                    <div class="rj-view-toggle">
+
+                        <button class="is-active"
+                                type="button"
+                                data-view="grid">
+                            <i class="bi bi-grid-3x3-gap-fill"></i>
+                        </button>
+
+                        <button type="button" data-view="list">
+                            <i class="bi bi-list-ul"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Product Grid -->
+            <div class="rj-product-grid" id="productGrid">
+
+                {% for product in products %} 
+
+                <article class="rj-product-card"
+
+                    data-price="{{ product.price }}"
+
+                    data-category="{{ product.category.slug|default:product.category.name|slugify }}"
+
+                    data-name="{{ product.name|lower }}"
+
+                    data-popularity="{{ product.popularity|default:0 }}"
+
+                    data-created="{{ product.created_at|date:'U'|default:0 }}">
+
+
+                    <!-- Product Image -->
+                    <div class="rj-product-image-wrap">
+
+                        {% if product.badge %}
+
+                            <span class="rj-product-badge">
+                                {{ product.badge }}
+                            </span>
+
+                        {% elif product.discount_percentage %}
+
+                            <span class="rj-product-badge">
+                                {{ product.discount_percentage }}% OFF
+                            </span>
+
+                        {% endif %}
+
+
+                        {% if product.image %}
+
+                            <img
+                                class="rj-product-image"
+                                src="{{ product.image.url }}"
+                                alt="{{ product.name }}"
+                                loading="lazy">
+
+                        {% else %}
+
+                            <img
+                                class="rj-product-image"
+                                src="{% static 'images/product-placeholder.png' %}"
+                                alt="{{ product.name }}"
+                                loading="lazy">
+
+                        {% endif %}
+
+
+                        <!-- Quick Action Buttons -->
+                        <div class="rj-product-quick-actions">
+
+                            <a href="{{ product.get_absolute_url }}"
+                               class="rj-round-action"
+                               title="View product">
+
+                                <i class="bi bi-eye"></i>
+
+                            </a>
+
+
+                            <button
+                                type="button"
+                                class="rj-round-action"
+                                data-action="wishlist"
+                                data-product-id="{{ product.id }}"
+                                title="Wishlist">
+
+                                <i class="bi bi-heart"></i>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="rj-round-action"
+                                data-action="quick-cart"
+                                data-product-id="{{ product.id }}"
+                                title="Add to cart">
+
+                                <i class="bi bi-cart3"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Product Details -->
+                    <div class="rj-product-info">
+
+                        <h3 class="rj-product-name">
+                            {{ product.name }}
+                        </h3>
+
+
+                        <div class="rj-product-price">
+
+                            <span>
+                                Rs. {{ product.price|floatformat:0 }}
+                            </span>
+
+                            {% if product.old_price %}
+
+                                <del>
+                                    Rs. {{ product.old_price|floatformat:0 }}
+                                </del>
+
+                            {% endif %}
+
+                        </div>
+
+
+                        <!-- Rating -->
+                        <div class="rj-product-rating">
+
+                            <span class="rj-stars">
+                                ★★★★★
+                            </span>
+
+                            <span>
+                                {{ product.rating|default:"5.0" }}
+                            </span>
+
+                            <small>
+                                ({{ product.review_count|default:"0" }} reviews)
+                            </small>
+
+                        </div>
+
+
+                        <!-- Add to Cart -->
+                        <button
+                            type="button"
+                            class="rj-add-to-cart"
+                            data-action="add-to-cart"
+                            data-product-id="{{ product.id }}">
+
+                            <i class="bi bi-cart3"></i>
+                            Add to Cart
+
+                        </button>
+
+                    </div>
+
+                </article>
+
+                {% empty %}
+
+                <div class="rj-empty-state">
+
+                    <i class="bi bi-gem"></i>
+
+                    <h3>Products coming soon</h3>
+
+                    <p>
+                        Add products from your Django admin panel
+                        to display your collection here.
+                    </p>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+
+            <p class="rj-no-results" id="noProductsMessage" hidden>
+                No products match these filters.
+                Please try another category or price range.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+{% endblock %}
+
+
+{% block extra_js %}
+
+<script src="{% static 'js/collection.js' %}" defer></script>
+
+{% endblock %}
